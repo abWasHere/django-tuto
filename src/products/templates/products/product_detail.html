@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block content %}
+
+<p>In product App template folder :</p>
+<h1>{{object.title}}</h1>
+
+<p>
+	{% if object.description != None and object.description != '' %}
+	{{object.description}} {% else %} Description coming soon ! {% endif %}
+</p>
+
+<p>Price : ${{object.price}}</p>
+
+<button>
+	<a href="./delete/">Delete product</a>
+	{% comment %} Starting from this URL "." I can go to the delete page
+	"/delete/" {% endcomment %}
+</button>
+
+{% endblock content %}

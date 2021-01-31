@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<h1>About us</h1>
+<p>This is a template.</p>
+
+<hr />
+<h2>Template context variable</h2>
+<p>
+	My template context variable properties : <br />
+	{{my_text}}, {{my_number}}, {{my_list}}
+</p>
+
+<p>Plain context var with html tags :</p>
+{{my_title}}
+<p>with 'safe' filter :</p>
+{{my_title|safe}}
+<p>with 'title' filter :</p>
+{{my_title|title}}
+<p>with 'safe' and 'title' filter :</p>
+{{my_title|safe|title}}
+
+<hr />
+<h2>Conditional rendering and loop in templates</h2>
+<ul>
+	{% for item in my_list %} {% if item == 67 %}
+	<li>{{forloop.counter}} - {{item|add:200}}</li>
+	{% elif item == "patate" %}
+	<li>{{forloop.counter}} - 100 {{item}}s</li>
+	{% else %}
+	<li>{{forloop.counter}} - {{item}}</li>
+	{% endif %} {% endfor %}
+</ul>
+{% endblock content %}
