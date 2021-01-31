@@ -117,6 +117,10 @@ Commands to run everytime a db model is modified (in a models.py):
 `python manage.py makemigrations` => look for changes (migrations)
 `python manage.py migrate` => apply all migrations
 
+Don't forget to register your models in the admin.py of the related app :
+`from .models import MyNewModel`
+`admin.site.register(MyNewModel)`
+
 ### models
 
 ### create model Objects in the Python shell

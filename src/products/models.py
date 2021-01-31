@@ -24,6 +24,7 @@ class Product(models.Model):
     #     return f"/products/{self.id}"
 
 
-# Blank values for Django fields where blank=True
-# (or filed types such as DateTimeField or ForeignKey)
+# When blank=True and null=True :
+# => Blank values for Django fields where null=True
+# (or field types such as DateTimeField or ForeignKey)
 # will be stored as NULL in the database.
