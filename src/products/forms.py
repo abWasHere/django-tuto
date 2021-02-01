@@ -3,7 +3,7 @@ from .models import Product
 
 # Those objects will take the form data as parameters (cf. views.py) and apply the field validations
 
-# Form based on the Product Model :
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
@@ -13,7 +13,7 @@ class ProductForm(forms.ModelForm):
         data = self.cleaned_data.get("title")
         if "X" in data:
             raise forms.ValidationError("No X allowed in title !")
-        if not "yo" in data:
+        if "yo" not in data:
             raise forms.ValidationError("Not a valid title. Add 'yo' !")
         return data
 
@@ -22,6 +22,8 @@ class ProductForm(forms.ModelForm):
 class RawProductForm(forms.Form):
     title = forms.CharField(max_length=100)
     description = forms.CharField(
-        required=False, label="", widget=forms.Textarea(attrs={"rows": 20, "cols": 100})
+        required=False,
+        label="",
+        widget=forms.Textarea(attrs={"rows": 20, "cols": 100}),
     )
     price = forms.DecimalField(initial=10)
