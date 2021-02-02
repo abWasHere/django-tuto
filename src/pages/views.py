@@ -6,14 +6,14 @@ from django.shortcuts import render
 # Create your views here.
 def home_view(request, *args, **kwargs):
     print(request.user)
-    return render(request, "home.html", {})
+    return render(request, "pages/home.html", {})
 
 
 def contact_view(req, *args, **kwargs):
     # print("ARGS ===", args)
     # print("KWARGS ===", kwargs)
     # return HttpResponse("<h1>Contact page</h1>")
-    return render(req, "contact.html", {})
+    return render(req, "pages/contact.html", {})
 
 
 def about_view(req, *args, **kwargs):
@@ -24,4 +24,4 @@ def about_view(req, *args, **kwargs):
         "my_list": ["patate", "pain", "20 kg de riz", 67, 890],
         "my_true_bool": True,
     }
-    return render(req, "about.html", my_context)
+    return render(req, "pages/about.html", my_context)

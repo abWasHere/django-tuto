@@ -4,6 +4,8 @@ from .models import Product
 from .forms import ProductForm  # , RawProductForm
 
 
+# FUNCTION BASED VIEWS != class based views (cf. blog.views)
+
 def product_list_view(req):
     my_queryset = Product.objects.all()  # list of objects
     my_context = {"objects_list": my_queryset}

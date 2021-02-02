@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "products",
     "pages",
     "blog",
+    "lessons",
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = "trydjango.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ["templates"],
+        "DIRS": ["src/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

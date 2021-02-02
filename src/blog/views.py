@@ -13,6 +13,8 @@ from .models import Article
 from .forms import ArticleForm as ArticleModelForm
 
 
+# CLASS BASED VIEWS != function based views
+
 class ArticleListView(ListView):
     template_name = "articles/article_list.html"
     # template has to be formatted like <blog>/<modelname>_list.html ?
